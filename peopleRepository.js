@@ -1,8 +1,6 @@
 var people = [];
 var idCounter = 0;
 
-people = JSON.parse(document.cookie);
-
 function createPerson(firstname, lastname, age, gender, identifier) {
 
   idCounter++;
@@ -17,7 +15,6 @@ function createPerson(firstname, lastname, age, gender, identifier) {
   }
   people.push(person);
 
-  savePeopleInCookie();
   return person.id;
 }
 
@@ -43,4 +40,8 @@ function updatePerson(id, firstname, lastname, age, gender) {
   }
   
   return true
+}
+
+function getAll() {
+  return people;
 }

@@ -7,12 +7,41 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="PeopleController.js"></script>
   <script src="peopleRepository.js"></script>
+  <script src="PeopleController.js"></script>
 </head>
 
 <body>
   <div class="container">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            ID
+          </th>
+          <th>
+            Firstname
+          </th>
+          <th>
+            Lastname
+          </th>
+          <th>
+            Age
+          </th>
+          <th>
+            Gender
+          </th>
+          <th>
+            Identifier
+          </th>
+        </tr>
+      </thead>
+      <tbody id="tableContent">
+      </tbody>
+    </table>
+
+    <!-- create and edit user -->
     <div class="form-group">
       <div class="col-sm-10">
         <div>
@@ -33,7 +62,7 @@
           <input type="number" id="identifier" name="identifier"><br>
           <input type="submit" value="Submit" class="btn btn-success" onclick="SubmitPerson()">
         </div>
-      
+
       </div>
     </div>
   </div>

@@ -11,13 +11,34 @@ function SubmitPerson() {
   }
   else { gender = "male" }
   var existingId = document.getElementById('id').value;
-  if (existingId == "") {
+  if (true) {
     var a = createPerson(fname, lname, age, gender, identifier)
     $('#id').val(a);
   }
   else {
     updatePerson(fname, lname, age, gender, identifier)
-    
   }
 
+  FillTableWithObjectsFromJavascript();
+}
+
+function FillTableWithObjectsFromJavascript() {
+  var people = getAll();
+
+  var content = "";
+  for (var i = 0; i < people.length; i++) {
+    content = content +
+      "<tr>"
+      + "<td>" + people[i].id + "</td>"
+      + "<td>" + people[i].firstname + "</td>"
+      + "<td>" + people[i].lastname + "</td>"
+      + "<td>" + people[i].age + "</td>"
+      + "<td>" + people[i].gender + "</td>"
+      + "<td>" + people[i].identifier + "</td>"
+      + "</tr>";
+  }
+
+  var htmlContent = $("#tableContent");
+
+  htmlContent.html(content);
 }
